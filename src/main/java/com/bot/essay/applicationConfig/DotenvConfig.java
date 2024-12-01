@@ -8,6 +8,6 @@ import org.springframework.context.annotation.Configuration;
 public class DotenvConfig {
     @Bean
     public Dotenv dotenv() {
-        return Dotenv.configure().directory("/app").load(); // Загрузка .env файла
+        return Dotenv.configure().load(); // Загрузка .env файла
     }
 }
