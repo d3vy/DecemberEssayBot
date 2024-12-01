@@ -11,6 +11,9 @@ RUN mvn dependency:go-offline -B
 # Копируем исходный код приложения
 COPY src ./src
 
+# Вставка .env в контейнер
+COPY .env /app/.env
+
 # Собираем приложение, пропуская тесты
 RUN mvn clean package -DskipTests
 

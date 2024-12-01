@@ -9,7 +9,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 public class EssayApplication {
     public static void main(String[] args) {
-        Dotenv dotenv = Dotenv.configure().load();
+        Dotenv dotenv = Dotenv.configure().directory("/app").load();
         SpringApplication.run(EssayApplication.class, args);
     }
 }
