@@ -30,7 +30,6 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data
       - ./init-db:/docker-entrypoint-initdb.d
-      - ./.env:/app/.env
     networks:
       - december-essay-bot-network
 
