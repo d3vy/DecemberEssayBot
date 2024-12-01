@@ -1,15 +1,14 @@
-application:
-  name: DecemberEssayBot
-datasource:
-  url: ${DATASOURCE_URL}
-  username: ${DATASOURCE_USERNAME}
-  password: ${DATASOURCE_PASSWORD}
-  driver-class-name: org.postgresql.Driver
-jpa:
-  hibernate:
-    ddl-auto: update
-  properties:
-    hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+spring:
+  application:
+    name: DecemberEssayBot
+  datasource:
+    url: ${DATASOURCE_URL}
+    username: ${DATASOURCE_USERNAME}
+    password: ${DATASOURCE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
 server:
   port: 8080
 bot:
