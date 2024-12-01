@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    depends_on:
+      - db
+    restart: always
+    networks:
+      - december-essay-bot-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  db:
+    image: postgres:latest
+    restart: always
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: ${DATASOURCE_NAME}
+      POSTGRES_USER: ${DATASOURCE_USERNAME}
+      POSTGRES_PASSWORD: ${DATASOURCE_PASSWORD}
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      - ./init-db:/docker-entrypoint-initdb.d
+    networks:
+      - december-essay-bot-network
+
+networks:
+  december-essay-bot-network:
+    driver: bridge
+
+volumes:
+  db-data:

@@ -1,0 +1,24 @@
+application:
+  name: ${APPLICATION_NAME}
+
+datasource:
+  url: ${DATASOURCE_URL}
+  username: ${DATASOURCE_USERNAME}
+  password: ${DATASOURCE_PASSWORD}
+  driver-class-name: ${DATASOURCE_DRIVER_CLASS_NAME}
+
+jpa:
+  database-platform: ${JPA_DATABASE_PLATFORM}
+  hibernate:
+    ddl-auto: ${JPA_HIBERNATE_DDL_AUTO}
+
+profiles:
+  active: ${SPRING_PROFILES_ACTIVE}
+
+server:
+  port: ${SERVER_PORT:8080}
+
+bot:
+  name: ${BOT_NAME}
+  token: ${BOT_TOKEN}
+  api-key: ${BOT_API_KEY}
