@@ -23,8 +23,8 @@ services:
     env_file:
       - .env
     environment:
-      POSTGRES_DB: essay_bot_database
-      POSTGRES_USER: postgres
+      POSTGRES_DB: ${DATASOURCE_NAME}
+      POSTGRES_USER: ${DATASOURCE_USERNAME}
       POSTGRES_PASSWORD: ${DATASOURCE_PASSWORD}
     volumes:
       - db-data:/var/lib/postgresql/data
