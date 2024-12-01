@@ -1,19 +1,18 @@
 application:
-  name: ${APPLICATION_NAME}
+  name: DecemberEssayBot
 datasource:
   url: ${DATASOURCE_URL}
   username: ${DATASOURCE_USERNAME}
   password: ${DATASOURCE_PASSWORD}
   driver-class-name: org.postgresql.Driver
 jpa:
-  database-platform: ${JPA_DATABASE_PLATFORM}
   hibernate:
-    ddl-auto: ${JPA_HIBERNATE_DDL_AUTO}
-profiles:
-  active: ${SPRING_PROFILES_ACTIVE}
+    ddl-auto: update
+  properties:
+    hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
 server:
-  port: ${SERVER_PORT:8080}
+  port: 8080
 bot:
-  name: ${BOT_NAME}
+  name: december_essay_bot
   token: ${BOT_TOKEN}
   api-key: ${BOT_API_KEY}
