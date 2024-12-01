@@ -1,8 +1,8 @@
 application:
   name: DecemberEssayBot
 datasource:
-  url: ${DATASOURCE_URL}
-  username: ${DATASOURCE_USERNAME}
+  url: jdbc:postgresql://db:5432/essay_bot_database
+  username: postgres
   password: ${DATASOURCE_PASSWORD}
   driver-class-name: org.hibernate.dialect.PostgreSQLDialect
 jpa:
@@ -14,6 +14,6 @@ profiles:
 server:
   port: 8080
 bot:
-  name: ${BOT_NAME}
+  name: december_essay_bot
   token: ${BOT_TOKEN}
   api-key: ${BOT_API_KEY}
