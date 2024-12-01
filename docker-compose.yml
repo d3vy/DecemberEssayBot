@@ -9,7 +9,6 @@ services:
       - db
     volumes:
       - ./.env:/app/.env
-    restart: always
     networks:
       - december-essay-bot-network
     healthcheck:
