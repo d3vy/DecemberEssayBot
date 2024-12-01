@@ -1,7 +1,7 @@
 application:
   name: DecemberEssayBot
 datasource:
-  url: jdbc:postgresql://db:5432/essay_bot_database
+  url: jdbc:postgresql://localhost:5432/essay_bot_database
   username: postgres
   password: ${DATASOURCE_PASSWORD}
   driver-class-name: org.hibernate.dialect.PostgreSQLDialect
